@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><style>.myAnim{
+width:100px;
+height:100px;
+background:red;
+position:relative;
+/* Chrome, Safari, Opera */
+-webkit-animation-name:myfirst;
+-webkit-animation-duration:5s;
+-webkit-animation-iteration-count:infinite;
+/* Standard syntax */
+animation-name:myfirst;
+animation-duration:5s;
+animation-iteration-count:infinite;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst
+{
+0% {background:red; left:0px; top:0px;}
+25% {background:pink; left:150px; top:0px;}
+50% {background:blue; left: 150px; top: 150px;}
+75% {background:purple; left:0px; top: 150px;}
+100% {background:red; left:0px; top:0px;}
+}
+/* Standard syntax */
+@keyframes myfirst
+{
+0% {background:red; left:0px; top:0px;}
+25% {background:pink; left: 150px; top:0px;}
+50% {background:blue; left: 150px; top: 150px;}
+75% {background:purple; left:0px; top: 150px;}
+100% {background:red; left:0px; top:0px;}
+}
+</style>
+</head>
+<body>
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+<div class="myAnim"></div>
+</body>
+</html>

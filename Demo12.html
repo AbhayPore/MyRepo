@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<style>
+.done{
+	background-color:green;
+}
+.pending{
+	background-color:red;
+}
+</style>
+<script type="text/javascript">
+
+
+
+			angular.module('myApp',[]).controller('controller',[function(){
+				var self=this;
+				self.notes=[
+				{id:1,label:'abhay pore',value:'present',done:false},
+				{id:2,label:'Ishaan pore', value:'present',done:true},
+				{id:3,label:'pore', value:'absent',done:false},
+				{id:4,label:'abhay', value:'present',done:true}
+				];		
+				
+				self.getNoteClass=function(status){
+					return{
+						done: status,
+						pending: !status
+					};
+				};
+			}]);
+</script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="controller as ctrl">
+	<div ng-repeat="note in ctrl.notes" ng-class="ctrl.getNoteClass(note.done)">
+	
+				<span ng-show="note.label"></span>
+
+		<span ng-bind="note.label"></span>
+	</div>
+</div>
+</body>
+</html>

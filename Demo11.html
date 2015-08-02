@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+		
+		<script type="text/javascript">
+		
+			angular.module('myApp',[]).controller('controller',[function(){
+				var self=this;
+				self.notes=[
+				{id:1,label:'abhay pore',value:'present'},
+				{id:2,label:'Ishaan pore', value:'present'},
+				{id:3,label:'pore', value:'absent'},
+				{id:4,label:'abhay', value:'present'}
+				];		
+			}]);
+		</script>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="controller as ctrl">
+		
+			<div ng-repeat="note in ctrl.notes">
+				<span ng-bind="note.label"></span>
+				<span ng-bind="note.value"></span>
+			</div>
+		</div>
+	</body>
+</html>
